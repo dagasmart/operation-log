@@ -1,10 +1,10 @@
 <?php
 
-namespace System\OperationLog\Services;
+namespace DagaSmart\OperationLog\Services;
 
 use Illuminate\Database\Eloquent\Builder;
 use DagaSmart\BizAdmin\Services\AdminService;
-use System\OperationLog\Models\OperationLog;
+use DagaSmart\OperationLog\Models\OperationLog;
 
 /**
  * @method OperationLog getModel()

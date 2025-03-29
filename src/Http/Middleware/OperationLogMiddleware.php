@@ -1,13 +1,13 @@
 <?php
 
-namespace System\OperationLog\Http\Middleware;
+namespace DagaSmart\OperationLog\Http\Middleware;
 
 use Closure;
 use DagaSmart\BizAdmin\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use System\OperationLog\Models\OperationLog;
-use System\OperationLog\OperationLogServiceProvider;
+use DagaSmart\OperationLog\Models\OperationLog;
+use DagaSmart\OperationLog\OperationLogServiceProvider;
 
 class OperationLogMiddleware
 {

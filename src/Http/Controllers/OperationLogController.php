@@ -1,9 +1,9 @@
 <?php
 
-namespace System\OperationLog\Http\Controllers;
+namespace DagaSmart\OperationLog\Http\Controllers;
 
 use DagaSmart\BizAdmin\Controllers\AdminController;
-use System\OperationLog\Services\OperationLogService;
+use DagaSmart\OperationLog\Services\OperationLogService;
 
 /**
  * @property OperationLogService $service

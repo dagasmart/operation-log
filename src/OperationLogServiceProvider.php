@@ -1,11 +1,11 @@
 <?php
 
-namespace System\OperationLog;
+namespace DagaSmart\OperationLog;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Route;
 use DagaSmart\BizAdmin\Extend\ServiceProvider;
-use System\OperationLog\Http\Middleware\OperationLogMiddleware;
+use DagaSmart\OperationLog\Http\Middleware\OperationLogMiddleware;
 
 class OperationLogServiceProvider extends ServiceProvider
 {
