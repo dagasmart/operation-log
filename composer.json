@@ -3,7 +3,6 @@
     "alias": "操作日志",
     "description": "用于记录用户操作日志",
     "type": "library",
-    "version": "1.0.0",
     "keywords": ["bizadmin", "extension"],
     "homepage": "https://github.com/dagasmart/operation-log",
     "license": "MIT",
