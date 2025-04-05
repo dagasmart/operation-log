@@ -25,7 +25,7 @@ class OperationLogServiceProvider extends ServiceProvider
             amisMake()->Tab()->title('基础设置')->body([
                 amisMake()->TagControl('except', '排除的路由')->description('路由路径，使用 Str::is() 匹配')->clearable(),
                 amisMake()->TagControl('secret_fields', '敏感字段')->description('会替换成 ******')->clearable(),
-                amisMake()->TagControl('allowed_methods', '允许记录的请求方法')->description('为空则记录所有请求方法'),
+                amisMake()->TagControl('allowed_methods', '允许记录的请求方法')->description('为空则记录所有请求方法（GET / HEAD / POST / PUT / DELETE / CONNECT / OPTIONS / TRACE / PATCH）'),
             ]),
             amisMake()->Tab()->title('路径映射')->body([
                 amisMake()

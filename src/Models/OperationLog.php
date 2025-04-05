@@ -50,4 +50,33 @@ class OperationLog extends Model
             return $value;
         });
     }
+
+    /**
+     * 清理商户操作日志
+     * @return bool
+     */
+    public function clean(): bool
+    {
+        $mer_id = admin_user()->mer_id;
+        $module = Admin::currentModule(true);
+        return $this->query()
+            ->when($module, function($query) use($module) {
+                $query->where('module', $module);
+            })
+            ->when(!is_null($mer_id), function($query) use($mer_id) {
+                $query->where('mer_id', $mer_id);
+            })
+            ->delete();
+    }
+
+    /**
+     * 清空平台操作日志并重建索引
+     * @return bool
+     */
+    public function truncate(): bool
+    {
+        $this->query()->truncate();
+        return true;
+    }
+
 }

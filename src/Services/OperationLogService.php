@@ -31,4 +31,25 @@ class OperationLogService extends AdminService
             ->when($user, fn($query) => $query->whereHas('user', fn($query) => $query->where('name', 'like', "%{$user}%")))
             ->when($ip, fn($query) => $query->where('ip', 'like', "%{$ip}%"));
     }
+
+
+    /**
+     * 清理商户操作日志
+     * @return bool
+     */
+    public function clean(): bool
+    {
+        return $this->getModel()->clean();
+    }
+
+    /**
+     * 清空平台操作日志并重建索引
+     * @return bool
+     */
+    public function truncate(): bool
+    {
+        return $this->getModel()->truncate();
+    }
+
+
 }

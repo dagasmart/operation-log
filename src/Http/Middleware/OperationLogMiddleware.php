@@ -22,7 +22,7 @@ class OperationLogMiddleware
 
             $log = [
                 'user_id' => $user->id ?? 0,
-                'user_name' => $user->name ?? 0,
+                'user_name' => $user->name ?? null,
                 'path'    => substr($this->currentPath(), 0, 255),
                 'method'  => $request->method(),
                 'ip'      => $request->getClientIp(),
@@ -50,7 +50,7 @@ class OperationLogMiddleware
 
     protected function shouldLogOperation(Request $request)
     {
-        return !$this->inExceptArray() && $this->inAllowedMethods($request->method());
+        return $request->input() && !$this->inExceptArray() && $this->inAllowedMethods($request->method());
     }
 
     protected function inAllowedMethods($method)
