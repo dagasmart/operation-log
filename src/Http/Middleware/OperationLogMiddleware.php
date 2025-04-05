@@ -21,11 +21,13 @@ class OperationLogMiddleware
             $user = Admin::user();
 
             $log = [
-                'user_id' => $user ? $user->id : 0,
+                'user_id' => $user->id ?? 0,
+                'user_name' => $user->name ?? 0,
                 'path'    => substr($this->currentPath(), 0, 255),
                 'method'  => $request->method(),
                 'ip'      => $request->getClientIp(),
                 'module'  => Admin::currentModule(true),
+                'mer_id'  => $user->mer_id ?? 0,
                 'input'   => $this->formatInput($request->input()),
             ];
 
