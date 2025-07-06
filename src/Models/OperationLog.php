@@ -57,7 +57,7 @@ class OperationLog extends Model
      */
     public function clean(): bool
     {
-        $mer_id = admin_user()->mer_id;
+        $mer_id = admin_user()->mer_id ?? null;
         $module = Admin::currentModule(true);
         return $this->query()
             ->when($module, function($query) use($module) {

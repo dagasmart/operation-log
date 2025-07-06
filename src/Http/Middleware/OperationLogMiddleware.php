@@ -27,7 +27,7 @@ class OperationLogMiddleware
                 'method'  => $request->method(),
                 'ip'      => $request->getClientIp(),
                 'module'  => Admin::currentModule(true),
-                'mer_id'  => $user->mer_id ?? 0,
+                'mer_id'  => $user->mer_id ?? null,
                 'input'   => $this->formatInput($request->input()),
             ];
 
