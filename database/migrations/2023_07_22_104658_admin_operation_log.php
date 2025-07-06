@@ -29,8 +29,8 @@ return new class extends Migration {
                 $table->string('ip')->nullable()->comment('IP');
                 $table->text('input')->comment('请求数据');
 
-                $table->string('module')->nullable()->comment('模块');
-                $table->bigInteger('mer_id')->default(0)->comment('商户ID');
+                $table->string('module', 50)->nullable()->comment('模块');
+                $table->bigInteger('mer_id')->nullable()->comment('商户ID');
 
                 $table->timestamps();
                 $table->index('user_id');
