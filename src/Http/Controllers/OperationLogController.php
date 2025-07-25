@@ -104,10 +104,8 @@ class OperationLogController extends AdminController
     //清理相关数据
     public function clean()
     {
-        if ($this->service->clean()) {
-            return $this->response()->successMessage('当前相关日志清理' . __('admin.successfully'));
-        }
-        return $this->response()->fail($this->service->getError() ?? '当前相关日志清理' . __('admin.failed'));
+        $this->service->clean();
+        return $this->response()->successMessage('当前相关日志清理' . __('admin.successfully'));
     }
 
     //清空数据并重建索引
